@@ -17,7 +17,7 @@ Add contributor info below, make sure add images and edit the social links for e
 | Student 1         | Student 2         | Student 3         | Student 4         | Student 5         | Germaine Pannell         | Reed Turgeon                                                                                                                  |
 | :-:               | :-:               | :-:               | :-:               | :-:               | :-:               | :-:                                                                                                                           |
 | student1-github   | student2-github   | student3-github   | student4-github   | student5-github   | [<img src="https://github.com/favicon.ico" width="25"> ](https://github.com/germainep)  | [<img src="https://github.com/favicon.ico" width="25"> ](https://github.com/MrT3313)                                          |
-| student1-linkedin | student2-linkedin | student3-linkedin | student4-linkedin | student5-linkedin | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="25"> ](https://www.linkedin.com/in/germainep/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="25"> ](https://www.linkedin.com/in/reedturgeon/)  |
+| student1-linkedin | student2-linkedin | student3-linkedin | student4-linkedin | student5-linkedin | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="25"> ](https://www.linkedin.com/in/germaine-p/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="25"> ](https://www.linkedin.com/in/reedturgeon/)  |
 
 
 <br>
