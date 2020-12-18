@@ -1,22 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import {
   BrowserRouter as Router,
   Route,
   useHistory,
-  Switch,
-} from 'react-router-dom';
+  Switch
+} from "react-router-dom";
 
-import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
-import 'antd/dist/antd.less';
+import { Security, LoginCallback, SecureRoute } from "@okta/okta-react";
+import "antd/dist/antd.less";
 
-import { NotFoundPage } from './components/pages/NotFound';
-import { ExampleListPage } from './components/pages/ExampleList';
-import { HomePage } from './components/pages/Home';
-import { ProfileListPage } from './components/pages/ProfileList';
-import { LoginPage } from './components/pages/Login';
-import { config } from './utils/oktaConfig';
-import { LoadingComponent } from './components/common';
+import { NotFoundPage } from "./components/pages/NotFound";
+import { ExampleListPage } from "./components/pages/ExampleList";
+import { HomePage } from "./components/pages/Home";
+import { ProfileListPage } from "./components/pages/ProfileList";
+import { LoginPage } from "./components/pages/Login";
+import { config } from "./utils/oktaConfig";
+import { LoadingComponent } from "./components/common";
+import { LandingPage } from "./components/pages/Landing";
 
 ReactDOM.render(
   <Router>
@@ -24,7 +25,7 @@ ReactDOM.render(
       <App />
     </React.StrictMode>
   </Router>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 function App() {
@@ -35,27 +36,27 @@ function App() {
   const authHandler = () => {
     // We pass this to our <Security /> component that wraps our routes.
     // It'll automatically check if userToken is available and push back to login if not :)
-    history.push('/login');
+    history.push("/login");
   };
 
   return (
-    
     <Security {...config} onAuthRequired={authHandler}>
-    <Switch>
-      <Route path="/login" component={LoginPage} />
-      <Route path="/implicit/callback" component={LoginCallback} />
-      {/* any of the routes you need secured should be registered as SecureRoutes */}
-      <SecureRoute
-        path="/"
-        exact
-        component={() => <HomePage LoadingComponent={LoadingComponent} />}
-      />
-      <SecureRoute path="/example-list" component={ExampleListPage} />
-      
-      <SecureRoute path="/profile-list" component={ProfileListPage} />
-      
-      <Route component={NotFoundPage} />
-    </Switch>
+      <Switch>
+        <Route path="/" component={LandingPage} />
+        {/* <Route path="/login" component={LoginPage} /> */}
+        <Route path="/implicit/callback" component={LoginCallback} />
+        {/* any of the routes you need secured should be registered as SecureRoutes */}
+        <SecureRoute
+          path="/"
+          exact
+          component={() => <HomePage LoadingComponent={LoadingComponent} />}
+        />
+        <SecureRoute path="/example-list" component={ExampleListPage} />
+
+        <SecureRoute path="/profile-list" component={ProfileListPage} />
+
+        <Route component={NotFoundPage} />
+      </Switch>
     </Security>
   );
 }
