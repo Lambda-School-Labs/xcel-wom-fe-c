@@ -4,7 +4,8 @@ function LandingBodyPage() {
   return (
     <section style={landingBodyPage}>
       <div style={box}>
-        <h3>Excutive apartment</h3>
+        <h3 style={h3Style}>Excutive apartment</h3>
+        <div style={h3Under}></div>
         <Image
           width={300}
           src="https://clintwoodapartments.com/wp-content/uploads/home-image.jpg"
@@ -15,7 +16,8 @@ function LandingBodyPage() {
         </p>
       </div>
       <div style={box}>
-        <h3>Overview</h3>
+        <h3 style={h3Style}>Overview</h3>
+        <div style={h3Under}></div>
         <ul>
           <li>Desirable Brighton School Distric</li>
           <li>Heat and hot water included</li>
@@ -26,7 +28,8 @@ function LandingBodyPage() {
         </ul>
       </div>
       <div style={box}>
-        <h3>Location Details</h3>
+        <h3 style={h3Style}>Location Details</h3>
+        <div style={h3Under}></div>
         <p>1600 Pennsylvania Avenue NW, Washington, DC 20500</p>
       </div>
     </section>
@@ -49,4 +52,15 @@ let box = {
   fontSize: "19px"
 };
 
+let h3Style = {
+  borderBottom: "1px #fe4a49 solid",
+  margin: "0"
+};
+
+let h3Under = {
+  borderTop: "4px #fe4a49 solid",
+  marginTop: "0",
+  marginBottom: "15px",
+  width: "25%"
+};
 export default LandingBodyPage;

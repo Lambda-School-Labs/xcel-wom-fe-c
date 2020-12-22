@@ -4,7 +4,8 @@ import Navbar from "./Navbar";
 import LandingBodyPage from "./landingBodyPage";
 import { Image } from "antd";
 import { Layout } from "antd";
-const { Header } = Layout;
+import AppFooter from "./AppFooter";
+const { Header, Footer } = Layout;
 
 function LandingContainer({ LoadingComponent }) {
   return (
@@ -20,6 +21,9 @@ function LandingContainer({ LoadingComponent }) {
       </Header>
       <RenderLandingPage />
       <LandingBodyPage />
+      <Footer style={footerStyle}>
+        <AppFooter />
+      </Footer>
     </Layout>
   );
 }
@@ -27,7 +31,8 @@ function LandingContainer({ LoadingComponent }) {
 let mainLayout = {
   padding: "0",
   height: "auto",
-  lineHeight: "1.6"
+  lineHeight: "1.6",
+  width: "100%"
 };
 
 let headerStyle = {
@@ -43,5 +48,9 @@ let logo = {
   display: "flex",
   justifyContent: "flex-start",
   marginLeft: "4%"
+};
+
+let footerStyle = {
+  width: "100%"
 };
 export default LandingContainer;
