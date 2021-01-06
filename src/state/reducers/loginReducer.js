@@ -1,13 +1,34 @@
 const initialState = {
   isLoading: false,
-  userName: '',
-  password: '',
-  error: false,
-  errorMessage: 'Incorrect Username or Password',
+  email: '',
   success: false,
   token: '',
 };
 
-const loginReducer = (state = initialState, action) => {};
+const loginReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'FORM_SUBMITTED':
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case 'LOGIN_SUCCESS':
+      return {
+        ...state,
+        isLoading: false,
+        success: true,
+        email: state.email,
+        token: action.payload,
+      };
+    case 'LOGOUT':
+      return {
+        ...state,
+        success: false,
+        email: '',
+      };
+    default:
+      return state;
+  }
+};
 
 export default loginReducer;
