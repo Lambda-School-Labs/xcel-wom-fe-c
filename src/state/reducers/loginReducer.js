@@ -7,6 +7,7 @@ const initialState = {
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
+    //adding a case for a submitted form
     case 'FORM_SUBMITTED':
       return {
         ...state,
