@@ -27,8 +27,6 @@ import logger from 'redux-logger';
 
 import rootReducer from './state/reducers';
 
-//resolved conflicts
-
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 ReactDOM.render(
   <Provider store={store}>
@@ -67,6 +65,7 @@ function App() {
             component={() => <HomePage LoadingComponent={LoadingComponent} />}
           />
           <SecureRoute path="/example-list" component={ExampleListPage} />
+
           <SecureRoute path="/profile-list" component={ProfileListPage} />
           <Route component={NotFoundPage} />
         </Switch>
