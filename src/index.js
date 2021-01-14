@@ -14,9 +14,10 @@ import { NotFoundPage } from './components/pages/NotFound';
 import { ExampleListPage } from './components/pages/ExampleList';
 import { HomePage } from './components/pages/Home';
 import { ProfileListPage } from './components/pages/ProfileList';
-import { LoginPage } from './components/pages/Login';
 import { config } from './utils/oktaConfig';
 import { LoadingComponent } from './components/common';
+import { LandingPage } from './components/pages/Landing';
+import { LoginPage } from './components/pages/Login';
 
 //Redux imports
 import { Provider } from 'react-redux';
@@ -53,21 +54,23 @@ function App() {
 
   return (
     <Security {...config} onAuthRequired={authHandler}>
-      <Switch>
-        <Route path="/login" component={LoginPage} />
-        <Route path="/implicit/callback" component={LoginCallback} />
-        {/* any of the routes you need secured should be registered as SecureRoutes */}
-        <SecureRoute
-          path="/"
-          exact
-          component={() => <HomePage LoadingComponent={LoadingComponent} />}
-        />
-        <SecureRoute path="/example-list" component={ExampleListPage} />
+      <Router>
+        <Switch>
+          <Route exact path="/landing" render={() => <LandingPage />} />
+          <Route path="/login" render={() => <LoginPage />} />
+          <Route path="/implicit/callback" render={() => <LoginCallback />} />
 
-        <SecureRoute path="/profile-list" component={ProfileListPage} />
-
-        <Route component={NotFoundPage} />
-      </Switch>
+          {/* any of the routes you need secured should be registered as SecureRoutes */}
+          <SecureRoute
+            path="/"
+            exact
+            component={() => <HomePage LoadingComponent={LoadingComponent} />}
+          />
+          <SecureRoute path="/example-list" component={ExampleListPage} />
+          <SecureRoute path="/profile-list" component={ProfileListPage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </Router>
     </Security>
   );
 }
